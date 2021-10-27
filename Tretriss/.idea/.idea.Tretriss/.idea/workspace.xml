@@ -13,9 +13,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Spawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Playfield.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Group.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameOverScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="202UkjNQgySwyfNIAcowEID6tmx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -61,7 +59,8 @@
       <option name="presentableId" value="Default" />
       <updated>1635242322313</updated>
       <workItem from="1635242328346" duration="611000" />
-      <workItem from="1635250233375" duration="5776000" />
+      <workItem from="1635250233375" duration="6418000" />
+      <workItem from="1635329797782" duration="13230000" />
     </task>
     <servers />
   </component>

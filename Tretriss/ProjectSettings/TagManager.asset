@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - back
   layers:
   - Default
   - TransparentFX
@@ -15,6 +16,8 @@ TagManager:
   - 
   - 
   - 
+  - Tetromino
+  - Tetromino2
   - 
   - 
   - 
@@ -34,10 +37,17 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - OnTop
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2055365147
+    locked: 0
+  - name: MiddleGround
+    uniqueID: 618856575
+    locked: 0
+  - name: Foreground
+    uniqueID: 1028712323
     locked: 0

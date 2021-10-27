@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Playfield : MonoBehaviour
 {
     
     public static int w = 10;
     public static int h = 20;
-    public static Transform[,] grid = new Transform[w, h]; 
+    public static Transform[,] grid = new Transform[w, h];
+    
+    private Text textScore; 
     
     public static Vector2 roundVec2(Vector2 v) {
         return new Vector2(Mathf.Round(v.x),
@@ -49,24 +52,30 @@ public class Playfield : MonoBehaviour
                 return false;
         return true;
     }
-    public static void deleteFullRows() {
+    public static void deleteFullRows()
+    {
+        int nbRowDelete = 0;
         for (int y = 0; y < h; ++y) {
             if (isRowFull(y)) {
                 deleteRow(y);
                 decreaseRowsAbove(y+1);
+                nbRowDelete++; 
+                //Debug.Log("debug deleteFullRows : add rows");
                 --y;
             }
         }
+        Score.scoring(nbRowDelete);
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

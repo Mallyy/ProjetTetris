@@ -6,6 +6,7 @@ public class Group : MonoBehaviour
 {
     // Time since last gravity tick
     float lastFall = 0;
+    public static bool isGameOver = false; 
 
     bool isValidGridPos() {        
         foreach (Transform child in transform) {
@@ -44,6 +45,8 @@ public class Group : MonoBehaviour
         if (!isValidGridPos()) {
             Debug.Log("GAME OVER");
             Destroy(gameObject);
+            isGameOver = true;
+            GameOverScript.updateGameOverCanva();
         }
     }
 
@@ -101,6 +104,12 @@ public class Group : MonoBehaviour
             if (isValidGridPos()) {
                 // It's valid. Update grid.
                 updateGrid();
+                //update score if valid 
+                // increment score 
+                if(Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    Score.scoringSoftLanding();
+                }
             } else {
                 // It's not valid. revert.
                 transform.position += new Vector3(0, 1, 0);
