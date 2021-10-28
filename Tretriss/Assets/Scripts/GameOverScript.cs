@@ -15,6 +15,7 @@ public class GameOverScript : MonoBehaviour
         Score.scoreValue = 0;
         Score.lignDeleted = 0;
         Group.isGameOver = false;
+        Score.fallTime = 0.8f;
     }
 
     public static void updateHighScore()

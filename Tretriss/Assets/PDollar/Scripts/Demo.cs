@@ -34,7 +34,7 @@ public class Demo : MonoBehaviour {
 	//GUI in game
 	public Text timer;
 	public Text formes;
-	private float maxtime = 5;
+	private float maxtime = 3f;
 	private float startTime;
 	
 	//Detection du geste
