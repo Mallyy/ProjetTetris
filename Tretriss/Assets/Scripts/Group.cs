@@ -7,6 +7,7 @@ public class Group : MonoBehaviour
     // Time since last gravity tick
     float lastFall = 0;
     public static bool isGameOver = false; 
+    AudioSource audioFall;
 
     bool isValidGridPos() {        
         foreach (Transform child in transform) {
@@ -41,12 +42,14 @@ public class Group : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioFall = GetComponent<AudioSource>();
         // Default position not valid? Then it's game over
         if (!isValidGridPos()) {
             Debug.Log("GAME OVER");
             Destroy(gameObject);
             isGameOver = true;
             GameOverScript.updateGameOverCanva();
+
         }
     }
 
@@ -104,6 +107,7 @@ public class Group : MonoBehaviour
             if (isValidGridPos()) {
                 // It's valid. Update grid.
                 updateGrid();
+                audioFall.Play(0);
                 //update score if valid 
                 // increment score 
                 if(Input.GetKeyDown(KeyCode.DownArrow))
