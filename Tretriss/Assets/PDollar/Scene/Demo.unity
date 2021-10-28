@@ -184,6 +184,7 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaDirect: 0.5
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
+<<<<<<< Updated upstream
 --- !u!114 &805624612 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7418705509287474286, guid: 971129baafd304455a111daa5207b8a1, type: 3}
@@ -196,12 +197,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &913106707
+=======
+--- !u!1001 &1758335151
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 100000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
       propertyPath: m_Name
       value: GestureOnScreen
@@ -300,6 +305,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
+=======
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498649249269038997, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+      propertyPath: m_Name
+      value: GestureOnScreen 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+--- !u!4 &1758335152 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1498649249268736949, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+  m_PrefabInstance: {fileID: 1758335151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1758335153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8230553545490271579, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+  m_PrefabInstance: {fileID: 1758335151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!1 &1907031143
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,5 +478,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63465958d7bcc403e89a14826c19f7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   gestureOnScreenPrefab: {fileID: 400000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
   timer: {fileID: 805624612}
+=======
+  gestureOnScreenPrefab: {fileID: 1758335152}
+  timer: {fileID: 1758335153}
+  formes: {fileID: 2098461437}
+--- !u!114 &2098461437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1498649248880098097, guid: 35d2befeb6fb15e40ad3119eee5d4055, type: 3}
+  m_PrefabInstance: {fileID: 1758335151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes

@@ -6,6 +6,10 @@ using System.IO;
 
 using PDollarGestureRecognizer;
 using UnityEngine.UI;
+<<<<<<< Updated upstream
+=======
+using Random = System.Random;
+>>>>>>> Stashed changes
 
 public class Demo : MonoBehaviour {
 
@@ -32,6 +36,7 @@ public class Demo : MonoBehaviour {
 	
 	//GUI in game
 	public Text timer;
+<<<<<<< Updated upstream
 	private float maxtime = 5;
 	private float startTime;
 
@@ -40,6 +45,23 @@ public class Demo : MonoBehaviour {
 		platform = Application.platform;
 		startTime = Time.time;
 		drawArea = new Rect(0, 0, Screen.width, Screen.height);
+=======
+	public Text formes;
+	private float maxtime = 5;
+	private float startTime;
+	
+	//Detection du geste
+
+	private string[] formesADeviner = {"etoile","cercle","zigzag"};
+	private string word;
+	private bool activate = false;
+	
+	void Start () {
+
+		platform = Application.platform;
+		drawArea = new Rect(0, 0, Screen.width, Screen.height);
+		Debug.Log("test");
+>>>>>>> Stashed changes
 		//timer = new Rect(Screen.width / 3, Screen.height / 5, Screen.width / 3, Screen.height / 10);
 		
 		/*
@@ -52,14 +74,26 @@ public class Demo : MonoBehaviour {
 		foreach (TextAsset gestureXml in gesturesXml)
 			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
 		
+<<<<<<< Updated upstream
+=======
+		/*
+>>>>>>> Stashed changes
 		//Load user custom gestures
 		string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
 		foreach (string filePath in filePaths)
 			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
+<<<<<<< Updated upstream
+=======
+		*/
+		
+		Debug.Log("test");
+		Initialise();
+>>>>>>> Stashed changes
 	}
 
 	void Update ()
 	{
+<<<<<<< Updated upstream
 
 		timer.text = "Temps restant :\n"+string.Format("{0:N2}",(maxtime - (Time.time - startTime)));
 		if ((maxtime - (Time.time - startTime)) <= 0)
@@ -122,6 +156,97 @@ public class Demo : MonoBehaviour {
 				currentGestureLineRenderer.SetVertexCount(++vertexCount);
 				currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
 			}
+=======
+		if (activate)
+		{
+			timer.text = string.Format("{0:N2}",(maxtime - (Time.time - startTime)));
+			if ((maxtime - (Time.time - startTime)) <= 0)
+			{
+				recognized = true;
+				startTime = Time.time;
+				
+				Gesture candidate = new Gesture(points.ToArray());
+				Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+				
+				//message = gestureResult.GestureClass + " " + gestureResult.Score;
+				Debug.Log(gestureResult.GestureClass);
+				if (gestureResult.GestureClass == word)
+				{
+					Debug.Log("C'est gagné !!!");
+				}
+				else
+				{
+					Debug.Log("Vous êtes null");
+				}
+				gestureOnScreenPrefab.gameObject.SetActive(false);
+				activate = false;
+				
+				recognized = false;
+				strokeId = -1;
+
+				points.Clear();
+
+				foreach (LineRenderer lineRenderer in gestureLinesRenderer) {
+
+					lineRenderer.SetVertexCount(0);
+					Destroy(lineRenderer.gameObject);
+				}
+
+				gestureLinesRenderer.Clear();
+			}
+			
+			
+			
+			if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer) {
+				if (Input.touchCount > 0) {
+					virtualKeyPosition = new Vector3(Input.GetTouch(0).position.x, Input.GetTouch(0).position.y);
+				}
+			} else {
+				if (Input.GetMouseButton(0)) {
+					virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+				}
+			}
+
+			if (drawArea.Contains(virtualKeyPosition)) {
+
+				if (Input.GetMouseButtonDown(0)) {
+
+					if (recognized) {
+
+						recognized = false;
+						strokeId = -1;
+
+						points.Clear();
+
+						foreach (LineRenderer lineRenderer in gestureLinesRenderer) {
+
+							lineRenderer.SetVertexCount(0);
+							Destroy(lineRenderer.gameObject);
+						}
+
+						gestureLinesRenderer.Clear();
+					}
+
+					++strokeId;
+					
+					Transform tmpGesture = Instantiate(gestureOnScreenPrefab, transform.position, transform.rotation) as Transform;
+					tmpGesture.transform.GetChild(0).gameObject.SetActive(false);
+					currentGestureLineRenderer = tmpGesture.GetComponent<LineRenderer>();
+					
+					gestureLinesRenderer.Add(currentGestureLineRenderer);
+					
+					vertexCount = 0;
+				}
+				
+				if (Input.GetMouseButton(0)) {
+					points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
+
+					currentGestureLineRenderer.SetVertexCount(++vertexCount);
+					currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
+				}
+			}
+		
+>>>>>>> Stashed changes
 		}
 	}
 
@@ -129,8 +254,13 @@ public class Demo : MonoBehaviour {
 
 		GUI.Box(drawArea, "Draw Area");
 		//GUI.Box(timer,"Temps restant :");
+<<<<<<< Updated upstream
 
 		GUI.Label(new Rect(10, Screen.height - 40, 500, 50), message);
+=======
+		
+		//GUI.Label(new Rect(10, Screen.height - 40, 500, 50), message);
+>>>>>>> Stashed changes
 		
 		/*
 		if (GUI.Button(new Rect(Screen.width - 100, 10, 100, 30), "Recognize")) {
@@ -160,4 +290,21 @@ public class Demo : MonoBehaviour {
 		}
 		*/
 	}
+<<<<<<< Updated upstream
+=======
+
+	private void Initialise()
+	{
+		startTime = Time.time;
+
+		Random r = new Random();
+		word = formesADeviner[r.Next(0, formesADeviner.Length)];
+		formes.text = word;
+
+		activate = true;
+		Debug.Log(activate);
+		gestureOnScreenPrefab.gameObject.SetActive(true);
+
+	}
+>>>>>>> Stashed changes
 }
