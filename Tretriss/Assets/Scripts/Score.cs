@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public static int scoreValue = 0;
-    private Text textScore; 
+    private Text textScore;
+    private Text textLign;
     public static int level = 1;
     public static int lignDeleted = 0; 
     
@@ -52,12 +53,14 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textScore = GetComponent<Text>();    }
-
+        textScore = GameObject.Find("Score").GetComponent<Text>();
+        textLign = GameObject.Find("LignCompter").GetComponent<Text>();
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        
+        textLign.text = "Lignes : " + lignDeleted;
         textScore.text = "Score : " + scoreValue;
     }
 }
