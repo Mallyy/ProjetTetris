@@ -43,6 +43,10 @@ public class Demo : MonoBehaviour {
 	private string word;
 	private bool activate = false;
 	
+	//lancement du scipt toutes les 30sec
+	private float looptime = 30f;
+	private float trueStartTime;
+	
 	void Start () {
 
 		platform = Application.platform;
@@ -66,6 +70,7 @@ public class Demo : MonoBehaviour {
 		foreach (string filePath in filePaths)
 			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
 		*/
+		
 		Initialise();
 
 	}
@@ -87,27 +92,16 @@ public class Demo : MonoBehaviour {
 				Debug.Log(gestureResult.GestureClass);
 				if (gestureResult.GestureClass == word)
 				{
-					Debug.Log("C'est gagné !!!");
+					Score.fallTime = Score.fallTime*2;
+					Debug.Log("Reussi : "+String.Format("{0:N3}",Score.fallTime));
 				}
 				else
 				{
-					Debug.Log("Vous êtes null");
-				}
-				gestureOnScreenPrefab.gameObject.SetActive(false);
-				activate = false;
-				
-				recognized = false;
-				strokeId = -1;
-
-				points.Clear();
-
-				foreach (LineRenderer lineRenderer in gestureLinesRenderer) {
-
-					lineRenderer.SetVertexCount(0);
-					Destroy(lineRenderer.gameObject);
+					Score.fallTime = Score.fallTime/4;
+					Debug.Log("Echec : "+String.Format("{0:N3}",Score.fallTime));
 				}
 
-				gestureLinesRenderer.Clear();
+				Deactivate();
 			}
 			
 			
@@ -161,6 +155,13 @@ public class Demo : MonoBehaviour {
 				}
 			}
 		}
+		else
+		{
+			if (looptime - (Time.time - trueStartTime) <= 0)
+			{
+				Initialise();
+			}
+		}
 	}
 
 	void OnGUI() {
@@ -198,7 +199,7 @@ public class Demo : MonoBehaviour {
 		*/
 	}
 
-	private void Initialise()
+	public void Initialise()
 	{
 		startTime = Time.time;
 
@@ -210,6 +211,26 @@ public class Demo : MonoBehaviour {
 		Debug.Log(activate);
 		gestureOnScreenPrefab.gameObject.SetActive(true);
 
+		trueStartTime = Time.time;
 	}
 
+	public void Deactivate()
+	{
+		gestureOnScreenPrefab.gameObject.SetActive(false);
+		activate = false;
+				
+		recognized = false;
+		strokeId = -1;
+
+		points.Clear();
+
+		foreach (LineRenderer lineRenderer in gestureLinesRenderer) {
+
+			lineRenderer.SetVertexCount(0);
+			Destroy(lineRenderer.gameObject);
+		}
+
+		gestureLinesRenderer.Clear();
+		trueStartTime = Time.time;
+	}
 }
