@@ -6,7 +6,7 @@ using UnityEngine;
 public class TetrisBlock : MonoBehaviour
 {
     private float previousTime; 
-    private float fallTime = 0.8f;
+    private static  float fallTime = 0.8f;
     private static int height = 20 ;
     private static int width = 10; 
     
@@ -54,5 +54,11 @@ public class TetrisBlock : MonoBehaviour
             }
         }
         return true; 
+    }
+
+    public static void updateFallTime()
+    {
+        fallTime = 0.8f / Score.lignDeleted;
+        Debug.Log(fallTime);
     }
 }
