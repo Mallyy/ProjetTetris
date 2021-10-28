@@ -47,7 +47,6 @@ public class Demo : MonoBehaviour {
 
 		platform = Application.platform;
 		drawArea = new Rect(0, 0, Screen.width, Screen.height);
-		Debug.Log("test");
 
 		//timer = new Rect(Screen.width / 3, Screen.height / 5, Screen.width / 3, Screen.height / 10);
 		
@@ -67,8 +66,6 @@ public class Demo : MonoBehaviour {
 		foreach (string filePath in filePaths)
 			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
 		*/
-		
-		Debug.Log("test");
 		Initialise();
 
 	}
