@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
     private Text textLign;
     public static int level = 1;
     public static int lignDeleted = 0; 
-    
+    public static  float fallTime = 0.8f;
     public static void scoring(int RowDeleted)
     {
         int scoreTemp = 0;
@@ -22,22 +22,22 @@ public class Score : MonoBehaviour
             case 1 : 
                 scoreTemp = 40 * level;
                 lignDeleted++;
-                TetrisBlock.updateFallTime();
+                updateFallTime();
                 break;
             case 2 :
                 scoreTemp = 100 * level;
                 lignDeleted += 2;
-                TetrisBlock.updateFallTime();
+                updateFallTime();
                 break;
             case 3 : 
                 scoreTemp = 300 * level;
                 lignDeleted += 3;
-                TetrisBlock.updateFallTime();
+                updateFallTime();
                 break;
             case 4 :
                 scoreTemp = 1200 * level;
                 lignDeleted += 4;
-                TetrisBlock.updateFallTime();
+                updateFallTime();
                 break; 
             default:
                 scoreTemp = 0;
@@ -67,4 +67,11 @@ public class Score : MonoBehaviour
         textLign.text = "Lignes : " + lignDeleted;
         textScore.text = "Score : " + scoreValue;
     }
+    public static void updateFallTime()
+    {
+        fallTime = 0.8f / Score.lignDeleted;
+        Debug.Log(fallTime);
+    }
+
+
 }
