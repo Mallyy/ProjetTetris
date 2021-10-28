@@ -9,6 +9,12 @@ public class BtnBehavior : MonoBehaviour
 	public void startGame()
 	{
 		SceneManager.LoadScene("SampleScene");
+		GameOverScript.resetScore();
+	}
+
+	public void accueil()
+	{
+		SceneManager.LoadScene("Scenes/ScèneMenue");
 	}
     	public void quitGame()
     	{

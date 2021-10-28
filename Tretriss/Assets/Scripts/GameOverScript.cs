@@ -12,11 +12,12 @@ public class GameOverScript : MonoBehaviour
     
     {
         Score.scoreValue = 0;
+        Group.isGameOver = false;
     }
 
     public static void updateHighScore()
     {
-        
+       
     }
     
     public static void updateGameOverCanva()
