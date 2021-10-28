@@ -10,8 +10,10 @@ public class GameOverScript : MonoBehaviour
 
     public static void resetScore()
     
-    {
+    { 
+        //reset les parametres pour une nouvelle partie
         Score.scoreValue = 0;
+        Score.lignDeleted = 0;
         Group.isGameOver = false;
     }
 
