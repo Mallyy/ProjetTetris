@@ -22,26 +22,30 @@ public class Score : MonoBehaviour
             case 1 : 
                 scoreTemp = 40 * level;
                 lignDeleted++;
+                TetrisBlock.updateFallTime();
                 break;
             case 2 :
                 scoreTemp = 100 * level;
                 lignDeleted += 2;
+                TetrisBlock.updateFallTime();
                 break;
             case 3 : 
                 scoreTemp = 300 * level;
                 lignDeleted += 3;
+                TetrisBlock.updateFallTime();
                 break;
             case 4 :
                 scoreTemp = 1200 * level;
                 lignDeleted += 4;
+                TetrisBlock.updateFallTime();
                 break; 
             default:
                 scoreTemp = 0;
                 Debug.Log("error score attribution . scoringMethod");
                 break;
         }
-        Score.scoreValue += scoreTemp;
-        TetrisBlock.updateFallTime();
+        scoreValue += scoreTemp;
+        
        //Debug.Log("score : ");
     }
 

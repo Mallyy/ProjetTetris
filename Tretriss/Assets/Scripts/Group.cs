@@ -100,7 +100,7 @@ public class Group : MonoBehaviour
 
         // Move Downwards and Fall
         else if (Input.GetKeyDown(KeyCode.DownArrow) ||
-                 Time.time - lastFall >= 1) {
+                 Time.time - lastFall >= TetrisBlock.fallTime) {
             //update score if valid 
             // increment score 
             if(Input.GetKeyDown(KeyCode.DownArrow))
