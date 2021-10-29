@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
     public static int level = 1;
     public static int lignDeleted = 0; 
     public static  float fallTime = 0.8f;
+    
     public static void scoring(int RowDeleted)
     {
         int scoreTemp = 0;
@@ -46,7 +47,7 @@ public class Score : MonoBehaviour
         }
         scoreValue += scoreTemp;
         
-       //Debug.Log("score : ");
+        //Debug.Log("score : ");
     }
 
     public static void scoringSoftLanding()

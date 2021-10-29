@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c93d43b3-373f-43a5-8609-bb48e95bf962" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tretriss/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tretriss/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c93d43b3-373f-43a5-8609-bb48e95bf962" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +19,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.0/InputSystem/Editor/AssetImporter/InputActionImporterEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameOverScript.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="202UkjNQgySwyfNIAcowEID6tmx" />
@@ -70,6 +67,7 @@
       <workItem from="1635242328346" duration="611000" />
       <workItem from="1635250233375" duration="6418000" />
       <workItem from="1635329797782" duration="18106000" />
+      <workItem from="1635448931056" duration="7744000" />
     </task>
     <servers />
   </component>
